@@ -1,0 +1,12 @@
+{% extends 'maps/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <div id="map" style="width: 600px; height: 400px"></div>
+    <script>
+        var map_data = {{ map_json_data | safe }};
+    </script>
+    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
